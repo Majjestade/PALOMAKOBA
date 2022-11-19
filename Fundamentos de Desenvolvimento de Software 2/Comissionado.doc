@@ -1,0 +1,38 @@
+
+public class Comissionado  extends Empregado {
+	private double brutoVendas;
+	private double taxaComissao;
+	
+	@Override
+	public double calculaSalario(){
+		return  this.brutoVendas * this.taxaComissao;
+	}
+	public Comissionado() {
+		super();
+		this.brutoVendas = 0.0;
+		this.taxaComissao = 0.0;
+	}
+	public Comissionado(String nome, String ndepto, double brutoVendas, double taxaComissao) {
+		super(nome,ndepto);
+		this.brutoVendas = brutoVendas;
+		this.taxaComissao = taxaComissao;
+	}	
+    @Override
+	public String toString() {
+		return "Comissionado "+ super.toString()+ 
+				"[Bruto em vendas=" + brutoVendas + ", Taxa comissao="+ taxaComissao +
+				"]";
+	}   
+    public double getBrutoVendas() {
+		return brutoVendas;
+	}
+	public void setBrutoVendas(double brutoVendas) {
+		this.brutoVendas = brutoVendas;
+	}
+	public double getTaxaComissao() {
+		return taxaComissao;
+	}
+	public void setTaxaComissao(double taxaComissao) {
+		this.taxaComissao = taxaComissao;
+	}    
+}
